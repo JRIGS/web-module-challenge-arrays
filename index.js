@@ -1,7 +1,7 @@
 var originalFlavors = ["Banana Nut Fudge",
     "Black Walnut",
     "Burgundy Cherry",
-   "Butterscotch Ribbon",
+    "Butterscotch Ribbon",
     "Cherry Macaron",
     "Chocolate",
     "Chocolate Almond",
@@ -28,7 +28,8 @@ var originalFlavors = ["Banana Nut Fudge",
     "Rocky Road",
     "Strawberry",
     "Vanilla",
-    "Vanilla Burnt Almond"]
+    "Vanilla Burnt Almond"
+]
 
 /* Task 1: Confirm that the array is exactly 31 flavors. Your function should accept:
 
@@ -40,17 +41,17 @@ To save you from having to count the items above, you can assume that length of 
 
 i.e. is31Flavors(originalFlavors) will return TRUE.*/
 
-// function is31Flavors(arr){
+function is31Flavors(arr){
 
-//   if(arr.length === 31){
-//       return true;
-//   }
-//   else{
-//       return false;
-//   }
-// }
+  if(arr.length === 31){
+      return true;
+  }
+  else{
+      return false;
+  }
+}
 
-// console.log(is31Flavors(originalFlavors));
+console.log(is31Flavors(originalFlavors));
 
 
 /* Task 2: Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -62,11 +63,11 @@ Your function should accept:
 
 Your function should add the flavor to the front of the array and console.log the resulting array.
 
-For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */ 
+For example addFlavor("Rainbow Sherbert", originalFlavors) should return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"] */
 
 const addFlavor = (arr, flavor) => {
     arr.unshift(flavor);
-    // return arr;
+    return arr;
 }
 
 console.log(addFlavor(originalFlavors, "Rainbow Sherbert"))
@@ -82,7 +83,7 @@ Your function should accept:
 
 Your function should remove a flavor from the end of the array and console.log the resulting array.
 
-For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/ 
+For example removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]*/
 
 const removeLastFlavor = (arr) => {
     if (arr.length >= 32) {
@@ -125,12 +126,13 @@ Hint: You can use .splice() for this
 
 const removeFlavorByName = (arr, flavor) => {
 
-    for (let i=0; i < arr.length; i++){
-        if(arr[i].includes(flavor))
-        
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes(flavor)) {
+            arr.splice(i, 1);
+        }
     }
-
 }
+console.log(removeFlavorByName(originalFlavors, "Vanilla"));
 
 
 /* Task 6: With all of these changes going on, we don't want to lose track of the actual, original 31 flavors. Write a function called copy that makes a copy of the array. 
@@ -141,9 +143,9 @@ Your function should accept:
 
 and should return a new array that is identical to the old array. You can name the new array however you'd like. */
 
-// const copy =(arrOne, arrTwo) => arrOne = [...arrTwo]
+const copy =(arrOne, arrTwo) => arrOne = [...arrTwo]
 
-//    console.log(copy("Jon", originalFlavors))
+   console.log(copy("Jon", originalFlavors))
 
 
 
@@ -162,15 +164,24 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
+const filterByWord = (arr, string) => {
 
-    /*code here*/
-
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i].includes(string)){
+            return arr[i]
+        }
+    }
 }
 
+console.log(filterByWord(originalFlavors, "Chocolate"));
 
 
-/* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
+
+
+
+
+
+/* 🧁🍦🍨 STRETCH 🍨🍦🍫*/
 
 /* STRETCH 1: Write a function that returns the average number of words in an array. You should be able to use this function for any array, but can test with originalFlavors.
 
@@ -182,7 +193,7 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
+function getAverageWordLength( /*code here*/ ) {
 
     /*code here*/
 
@@ -220,7 +231,8 @@ var newFlavors = ["Date night",
     "Chocolate Fudge",
     "Daiquiri Ice",
     "Rainbow Sherbet",
-    "Rainbow Swirl"] 
+    "Rainbow Swirl"
+]
 var seasonalFlavors = ["America's Birthday Cake",
     "Baseball Nut®",
     "Blueberry Cheesecake",
@@ -244,7 +256,8 @@ var seasonalFlavors = ["America's Birthday Cake",
     "made with Snickers®",
     "made with M&M's®",
     "Heath®",
-    "Mango Tango",]
+    "Mango Tango",
+]
 var regionalFlavors = ["Pink Bubblegum",
     "Caramel Macchiato",
     "York Peppermint Pattie",
@@ -268,9 +281,10 @@ var regionalFlavors = ["Pink Bubblegum",
     "Cotton Candy Crackle",
     "Quarterback Crunch",
     "Chocolate Chocolate Chip Cheesecake",
-    "Caramel 'n' Cookies"]
+    "Caramel 'n' Cookies"
+]
 
-function getRandomFlavors(/*code here*/){
+function getRandomFlavors( /*code here*/ ) {
 
     /*code here*/
 
